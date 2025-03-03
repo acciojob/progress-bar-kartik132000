@@ -1,1 +1,80 @@
 /*  your css code here. If applicable */
+*{
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            width: 50%;
+        }
+        .progress-container {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+        .progress-container::before {
+            content: "";
+            background: #dcdcdc;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            transform: translateY(-50%);
+            z-index: -1;
+        }
+        .progress {
+            background: #4caf50;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            transform: translateY(-50%);
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+        .circle {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            background: #dcdcdc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+        .circle.active {
+            background: #4caf50;
+            color: white;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background: #4caf50;
+            color: white;
+            transition: 0.3s;
+        }
+        button:disabled {
+            background: #dcdcdc;
+            cursor: not-allowed;
+        }
